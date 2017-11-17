@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA", "RSA\RSA.csproj", "{E6445749-9D93-42AE-92ED-4761B9D2D72C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local Dev settings", "Local Dev settings", "{8B9E214F-5B0B-4685-860A-919B4A88F0B4}"
+	ProjectSection(SolutionItems) = preProject
+		RimworldInstall.props = RimworldInstall.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA.Core", "RSA.Core\RSA.Core.csproj", "{82C7DB11-40F4-4F7F-8DA8-72FD876BCBEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6445749-9D93-42AE-92ED-4761B9D2D72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6445749-9D93-42AE-92ED-4761B9D2D72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6445749-9D93-42AE-92ED-4761B9D2D72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6445749-9D93-42AE-92ED-4761B9D2D72C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C7DB11-40F4-4F7F-8DA8-72FD876BCBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C7DB11-40F4-4F7F-8DA8-72FD876BCBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C7DB11-40F4-4F7F-8DA8-72FD876BCBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C7DB11-40F4-4F7F-8DA8-72FD876BCBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

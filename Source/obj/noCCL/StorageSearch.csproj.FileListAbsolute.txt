@@ -1,3 +1,0 @@
-C:\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods\StorageSearch\Assemblies\StorageSearch.dll
-C:\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods\StorageSearch\Source\obj\noCCL\StorageSearch.csprojResolveAssemblyReference.cache
-C:\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods\StorageSearch\Source\obj\noCCL\StorageSearch.dll

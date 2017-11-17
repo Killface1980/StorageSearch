@@ -1,2 +1,0 @@
-D:\Games\RimWorldUP\Mods\StorageSearch\Assemblies\StorageSearch.dll
-D:\Games\RimWorldUP\Mods\StorageSearch\Source\obj\Release\StorageSearch.dll

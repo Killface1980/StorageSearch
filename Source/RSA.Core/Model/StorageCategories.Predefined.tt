@@ -1,0 +1,36 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+	string[] predefined= new[] {
+		"Storage",
+		"Bill",
+		"Outfit"
+	};
+
+#>using System.Collections.Generic;
+using Verse;
+
+namespace ImprovedFilter {
+
+    public static partial class SearchCategories
+    {
+<#	foreach (var cat in predefined) { #>
+		public const string CategoryID_<#= cat #> = "<#= cat #>";
+        public static SearchTerm <#= cat #> {
+			get { return TermFor(CategoryID_<#= cat #>); }
+		}
+<#	}  #>
+		
+		static SearchCategories() {
+			CachedTerms = new Dictionary<string, SearchTerm>{
+<#	foreach (var cat in predefined) { #>
+				{ CategoryID_<#= cat #>, new SearchTerm(CategoryID_<#= cat #>)},
+<#	}  #>
+			};
+		}
+    }
+}

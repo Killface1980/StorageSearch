@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Storage Search</name>
-  <author>Killface</author>
-  <targetVersion>0.15.1280</targetVersion>
+  <name>Rimworld Search Agency</name>
+  <author>DoctorVanGogh, Killface, meonester</author>
+  <targetVersion>0.17.1557</targetVersion>
   <description>
-    This Mod allows you to search by name in storage filter tab. Original A12 version by meonester.
-    Updated for A15 by Killface.
+    This Mod allows you to search by name in various filters:
+    
+    + Storage tab
+    + Bill tab
+    + Outfit tab
+    
+    Original A12 version by meonester. Initial update for A17 by Killface.
+    Mod menu, rewrites for Harmony and massive improvements by
+    DoctorVanGogh
 
     Includes Hauling Hysteresis by Vendan https://ludeon.com/forums/index.php?topic=26958.0
-
-    As of 2016-09-28, this mod also
-    - allows apparel to be searched by name in the edit window
-
 
   </description>
 </ModMetaData>

@@ -1,0 +1,10 @@
+  <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	  <PropertyGroup>
+      <!-- change this to local installation path to enable assembly lookups (UnityEngine & base game) -->
+		  <RimworldInstallDir>E:\Spiele\SteamApps\SteamApps\common\Rimworld\</RimworldInstallDir>		
+      <!-- If you're developing on a non windows machine, change to correct path-->
+		  <RimworldDataDir>$(RimworldInstallDir)\RimWorldWin_Data\</RimworldDataDir>
+      <!-- The following should never need change -->
+      <RimworldManagedAssemblyDir>$(RimworldDataDir)\Managed\</RimworldManagedAssemblyDir>
+	  </PropertyGroup>
+  </Project>

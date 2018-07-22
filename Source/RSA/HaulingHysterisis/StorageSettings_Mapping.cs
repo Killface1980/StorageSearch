@@ -3,7 +3,7 @@ using RimWorld;
 
 namespace RSA.HaulingHysterisis
 {
-    internal class StorageSettings_Mapping
+    public class StorageSettings_Mapping
     {
         private static Dictionary<StorageSettings, StorageSettings_Hysteresis> mapping = new Dictionary<StorageSettings, StorageSettings_Hysteresis>();
 

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
-using RSA;
 using RSA.HaulingHysterisis;
 using RSA.Languages;
 using UnityEngine;
 using Verse;
 
-namespace StorageSearch {
+namespace StorageSearch
+{
 
     [HarmonyPatch(typeof(ThingFilterUI), nameof(ThingFilterUI.DoThingFilterConfigWindow))]
     class HaulingHysteresis_InjectControls {
@@ -19,7 +18,7 @@ namespace StorageSearch {
 
         internal static volatile int showHysteresisCount;
 
-        private static Queue<StorageSettings> _settingsQueue = new Queue<StorageSettings>();
+        private static readonly Queue<StorageSettings> _settingsQueue = new Queue<StorageSettings>();
 
         internal static Queue<StorageSettings> SettingsQueue => _settingsQueue;
 
@@ -31,7 +30,8 @@ namespace StorageSearch {
             if (showHysteresis)
             {                
                 DoHysteresisBlock(new Rect(0f, rect.yMax - HysteresisHeight, rect.width, HysteresisHeight), _settingsQueue.Dequeue());
-                rect= new Rect(rect.x, rect.y, rect.width, rect.height - HysteresisBlockHeight);            
+
+                rect = new Rect(rect.x, rect.y, rect.width, rect.height - HysteresisBlockHeight);
             }
         }        
 
@@ -41,8 +41,7 @@ namespace StorageSearch {
 
             storageSettings_Hysteresis.FillPercent = Widgets.HorizontalSlider(rect.LeftPart(0.8f), storageSettings_Hysteresis.FillPercent, 0f, 100f, false, RSAKeys.HaulingHysteresis_RefillCellsLabel.Translate());
             Widgets.Label(rect.RightPart(0.2f), storageSettings_Hysteresis.FillPercent.ToString("N0") + "%");
-
-            StorageSettings_Mapping.Set(settings, storageSettings_Hysteresis);
+            StorageSettings_Mapping.Set(settings, storageSettings_Hysteresis); 
         }        
     }
 }

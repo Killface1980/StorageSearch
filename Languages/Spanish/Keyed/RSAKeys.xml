@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RSA>Rimworld Search Agency</RSA>
+  <!-- Settings -->
+  <RSA.ForOutfits>Habilitar filtro en vestimentas</RSA.ForOutfits>
+  <RSA.ForOutfitsTip>Mostrar el cuadro de búsqueda en el administrador de vestimentas.</RSA.ForOutfitsTip>
+  <RSA.ForCrafting>Habilitar el filtro en elaboración</RSA.ForCrafting>
+  <RSA.ForCraftingTip>Mostrar el cuadro de búsqueda en los detalles de los proyectos de elaboración.</RSA.ForCraftingTip>
+  <!-- ThingFilter controls-->
+  <HaulingHysteresis.RefillCellsLabel>Rellenar las casillas con menos de</HaulingHysteresis.RefillCellsLabel>
+  <RSA.Harmony>Filter Search Main injected {0}...</RSA.Harmony>
+  <RSA.Harmony.ExtendedCrafting>(ExtendedCrafting detected)</RSA.Harmony.ExtendedCrafting>
+</LanguageData>

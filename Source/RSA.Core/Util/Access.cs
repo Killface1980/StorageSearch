@@ -16,7 +16,7 @@ namespace RSA.Core.Util {
         /// <remarks>This access if orders of magnitude faster than using Reclection.</remarks>
         public static Func<T, P> GetPropertyGetter<T, P>([NotNull] string propertyName) {
             MethodInfo mi = typeof(T).GetProperty(propertyName, BindingFlags.Instance | BindingFlags.NonPublic).GetGetMethod(true);
-            DynamicMethod dm = new DynamicMethod(String.Empty, typeof(P), new[] { typeof(T) }, typeof(T));
+            DynamicMethod dm = new DynamicMethod(string.Empty, typeof(P), new[] { typeof(T) }, typeof(T));
             var ilGen = dm.GetILGenerator();
             ilGen.Emit(OpCodes.Ldarg_0);
             ilGen.Emit(OpCodes.Callvirt, mi);
@@ -34,7 +34,7 @@ namespace RSA.Core.Util {
         /// <remarks>This access if orders of magnitude faster than using Reclection.</remarks>
         public static Func<P> GetPropertyGetter<P>([NotNull] string propertyName, [NotNull] Type ownerType) {
             MethodInfo mi = ownerType.GetProperty(propertyName, BindingFlags.Static | BindingFlags.NonPublic).GetGetMethod(true);
-            DynamicMethod dm = new DynamicMethod(String.Empty, typeof(P), Type.EmptyTypes, ownerType);
+            DynamicMethod dm = new DynamicMethod(string.Empty, typeof(P), Type.EmptyTypes, ownerType);
             var ilGen = dm.GetILGenerator();
             ilGen.Emit(OpCodes.Callvirt, mi);
             ilGen.Emit(OpCodes.Ret);
@@ -51,7 +51,7 @@ namespace RSA.Core.Util {
         /// <remarks>This access if orders of magnitude faster than using Reclection.</remarks>
         public static Func<T, F> GetFieldGetter<T, F>([NotNull] string fieldName) {
             FieldInfo fi = typeof(T).GetField(fieldName, BindingFlags.Instance | BindingFlags.NonPublic);
-            DynamicMethod dm = new DynamicMethod(String.Empty, typeof(F), new[] { typeof(T) }, typeof(T));
+            DynamicMethod dm = new DynamicMethod(string.Empty, typeof(F), new[] { typeof(T) }, typeof(T));
             var ilGen = dm.GetILGenerator();
             ilGen.Emit(OpCodes.Ldarg_0);
             ilGen.Emit(OpCodes.Ldfld, fi);
@@ -70,7 +70,7 @@ namespace RSA.Core.Util {
         /// <remarks>This access if orders of magnitude faster than using Reclection.</remarks>
         public static Func<F> GetFieldGetter<F>([NotNull] string fieldName, Type ownerType) {
             FieldInfo fi = ownerType.GetField(fieldName, BindingFlags.Static | BindingFlags.NonPublic);
-            DynamicMethod dm = new DynamicMethod(String.Empty, typeof(F),Type.EmptyTypes, ownerType);
+            DynamicMethod dm = new DynamicMethod(string.Empty, typeof(F),Type.EmptyTypes, ownerType);
             var ilGen = dm.GetILGenerator();
             ilGen.Emit(OpCodes.Ldfld, fi);
             ilGen.Emit(OpCodes.Ret);

@@ -11,8 +11,7 @@ namespace RSA.Core {
         private static readonly IDictionary<string, SearchTerm> CachedTerms;
 
         public static SearchTerm TermFor([NotNull] string category) {
-            SearchTerm term;
-            if (!CachedTerms.TryGetValue(category, out term))
+            if (!CachedTerms.TryGetValue(category, out SearchTerm term))
                 CachedTerms.Add(category, term = new SearchTerm(category));
 
             return term;

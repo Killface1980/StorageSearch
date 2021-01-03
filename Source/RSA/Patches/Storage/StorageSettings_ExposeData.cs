@@ -1,5 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
-using HarmonyLib;
+﻿using HarmonyLib;
 using RimWorld;
 using RSA.HaulingHysterisis;
 using Verse;

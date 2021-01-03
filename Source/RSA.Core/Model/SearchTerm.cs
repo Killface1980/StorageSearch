@@ -22,7 +22,7 @@ namespace RSA.Core {
         }
 
         public void Reset() {
-            Value = String.Empty;
+            Value = string.Empty;
         }
 
         internal TreeNode_ThingCategory FilterNodes(TreeNode_ThingCategory node)

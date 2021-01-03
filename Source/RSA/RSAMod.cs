@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using HarmonyLib;
-using RimWorld;
-using RSA;
 using RSA.Core;
 using RSA.Languages;
 using UnityEngine;
@@ -18,7 +14,7 @@ namespace RSA
         public static bool EnableOutfitFilter = true;
         public static bool EnableCraftingFilter = true;
 
-        private RSACoreMod baseFilterSearchMod;
+        private readonly RSACoreMod baseFilterSearchMod;
 
         public RSAMod(ModContentPack content) : base(content)
         {

@@ -12,7 +12,7 @@ namespace RSA.Core
 
         public static bool Debug = false;
 
-        private static ThingFilter filter = new ThingFilter();  // dummy filter for ui settings preview
+        private static readonly ThingFilter filter = new ThingFilter();  // dummy filter for ui settings preview
         private static Vector2 scrollPosition = new Vector2();
 
 
@@ -32,7 +32,7 @@ namespace RSA.Core
 
         public override string SettingsCategory() {
             if (SupressSettings)
-                return String.Empty;
+                return string.Empty;
 
             return Debug
                 ? RSACoreKeys.RSACore_Debug.Translate(Assembly.GetExecutingAssembly().GetName().Version.ToString())

@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using RimWorld;
 using RSA.Core;
 using RSA.Core.Util;
 using StorageSearch;
-using UnityEngine;
-using Verse;
 
 namespace RSA
 {
     [HarmonyPatch(typeof(ITab_Storage), "FillTab")]
     public class ITab_Storage_FillTab {
 
-        private static Func<RimWorld.ITab_Storage, IStoreSettingsParent> GetSelStoreSettingsParent;
+        private static readonly Func<RimWorld.ITab_Storage, IStoreSettingsParent> GetSelStoreSettingsParent;
 
 
         static ITab_Storage_FillTab() {

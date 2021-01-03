@@ -2,9 +2,9 @@
 using RimWorld;
 using RSA.Core;
 using UnityEngine;
-using Verse;
 
-namespace RSA {
+namespace RSA
+{
     [HarmonyPatch(typeof(Dialog_BillConfig), nameof(Dialog_BillConfig.DoWindowContents))]
     class Dialog_BillConfig_DoWindowContents
     {

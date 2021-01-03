@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <RSACore>Rimworld Search Agency Core</RSACore>
+  <RSACore.Debug>Rimworld Search Agency Core (v{0})</RSACore.Debug>
+  <RSACore.HarmonyLog>Rimworld Search Agency basics injected...</RSACore.HarmonyLog>
+  <!-- Settings -->
+  <RSACore.IncludeParentCategory>Mostrar categorías superiores</RSACore.IncludeParentCategory>
+  <RSACore.IncludeParentCategoryTip>Incluir la primera categoría superior de un artículo en los filtros de búsqueda.</RSACore.IncludeParentCategoryTip>
+  <RSACore.SearchWatermark>Buscar</RSACore.SearchWatermark>
+  <RSACore.SearchWidth>Ancho relativo del cuadro de búsqueda</RSACore.SearchWidth>
+  <RSACore.Preview>Vista previa</RSACore.Preview>
+</LanguageData>

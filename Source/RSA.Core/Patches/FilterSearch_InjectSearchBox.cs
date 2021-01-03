@@ -7,12 +7,12 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using HarmonyLib;
-using RSA.Core.Util;
 using RSA.Languages;
 using UnityEngine;
 using Verse;
 
-namespace RSA.Core {
+namespace RSA.Core
+{
 
     [HarmonyPatch(typeof(ThingFilterUI), nameof(ThingFilterUI.DoThingFilterConfigWindow))]
     [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Harmony patch class")]
@@ -181,18 +181,17 @@ namespace RSA.Core {
             var instructions = new List<CodeInstruction>(instr);
 
             DumpIL(instructions, "Before patch");
-
             var miDrawMenuSection = AccessTools.Method(typeof(Widgets), nameof(Widgets.DrawMenuSection));
             var miGetRootNode = AccessTools.Property(typeof(ThingCategoryNodeDatabase), nameof(ThingCategoryNodeDatabase.RootNode)).GetGetMethod(true);
 
-            var idxStart = instructions.FindIndex(ci => ci.opcode == OpCodes.Call && ci.operand == miDrawMenuSection);
+            var idxStart = instructions.FindIndex(ci => ci.opcode == OpCodes.Call && ci.operand is MethodInfo && (MethodInfo)ci.operand == miDrawMenuSection);
             if (idxStart == -1)
             {
                 Log.Warning("Could not find ThingFilterUI.DoThingFilterConfigWindow DrawMenuSection anchor - not transpiling code");
                 return instructions;
             }
 
-            var idxEnd = instructions.FindIndex(idxStart, ci => ci.opcode == OpCodes.Call && ci.operand == miGetRootNode);
+            var idxEnd = instructions.FindIndex(idxStart, ci => ci.opcode == OpCodes.Call && ci.operand is MethodInfo && (MethodInfo)ci.operand == miGetRootNode);
             if (idxEnd == -1)
             {
                 Log.Warning("Could not find ThingFilterUI.DoThingFilterConfigWindow RootNode anchor - not transpiling code");
@@ -228,9 +227,13 @@ namespace RSA.Core {
         [Conditional("TRACE")]
         private static void DumpIL(IEnumerable<CodeInstruction> instr, string header = null)
         {
-            Func<Label, string> lblToString = l => $"Label_{l.GetHashCode()}";
+            if(!Prefs.DevMode)
+            {
+                return;
+            }
+            string lblToString(Label l) => $"Label_{l.GetHashCode()}";
 
-            Func<IEnumerable<Label>, string> concatLabels = labels =>
+            string concatLabels(IEnumerable<Label> labels)
             {
                 var str = labels.Aggregate(
                     new StringBuilder(),
@@ -239,12 +242,12 @@ namespace RSA.Core {
 
                 );
 
-                return !String.IsNullOrEmpty(str) ? $"[{str}]:\t" : null;
-            };
+                return !string.IsNullOrEmpty(str) ? $"[{str}]:\t" : null;
+            }
 
             Log.Message(instr.Aggregate(
                     new StringBuilder(header != null ? $"{header}\r\n" : null),
-                    (sb, ci) => sb.AppendLine($"{concatLabels(ci.labels)}{ci.opcode}\t{(ci.operand is Label ? lblToString((Label)ci.operand) : ci.operand)}"),
+                    (sb, ci) => sb.AppendLine($"{concatLabels(ci.labels)}{ci.opcode}\t{(ci.operand is Label label ? lblToString(label) : ci.operand)}"),
                     sb => sb.ToString()
                 )
             );
